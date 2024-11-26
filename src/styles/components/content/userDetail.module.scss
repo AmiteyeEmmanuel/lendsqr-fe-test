@@ -1,0 +1,193 @@
+.details-container {
+  padding: 60px;
+  width: 70%;
+
+  .details-button {
+    border: none;
+    background-color: transparent;
+    width: 152px;
+    height: 30px;
+
+    .link {
+      display: flex;
+      gap: 12px;
+      text-decoration: none;
+      color: #545f7d;
+
+      p {
+        font-family: "Work Sans";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 18.77px;
+        text-align: left;
+        text-decoration-skip-ink: none;
+      }
+    }
+  }
+
+  .details-head {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 44px;
+
+    .left {
+      width: 143px;
+      height: 28px;
+      p {
+        position: relative;
+        font-family: "Work Sans";
+        color: #213f7d;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28.15px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+    }
+
+    .right {
+      display: flex;
+      gap: 20px;
+
+      button {
+        width: 170px;
+        height: 40px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        background-color: transparent;
+        cursor: pointer;
+
+        &.blacklist {
+          border: 1px solid #e4033b;
+          color: #e4033b;
+        }
+
+        &.activate {
+          border: 1px solid #39cdcc;
+          color: #39cdcc;
+        }
+      }
+    }
+  }
+
+  .details-body {
+    width: 88%;
+    height: 210px;
+    position: relative;
+    top: 90px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    padding: 20px 60px;
+
+    .details-info {
+      display: flex;
+      width: 700px;
+      height: 100px;
+      gap: 20px;
+
+      .head-info-left {
+        display: flex;
+        justify-content: center;
+        border-right: 1px solid #d2d3d5;
+        width: 350px;
+        padding-right: 20px;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          width: auto;
+          height: auto;
+        }
+
+        .info-left {
+          h2 {
+            font-family: "Work Sans";
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 25.81px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #213f7d;
+          }
+          p {
+            position: relative;
+            top: 10px;
+            font-family: "Work Sans";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 16.42px;
+            color: #545f7d;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+          }
+        }
+      }
+
+      .head-info-middle {
+        display: flex;
+        justify-content: center;
+        border-right: 1px solid #d2d3d5;
+        width: 150px;
+        padding-right: 20px;
+        align-items: center;
+        gap: 20px;
+
+        p {
+          font-family: "Work Sans";
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 16.42px;
+          text-align: left;
+          color: #545f7d;
+          text-underline-position: from-font;
+          text-decoration-skip-ink: none;
+        }
+
+        img {
+          width: 20px;
+          height: 20px;
+          position: relative;
+          top: 10px;
+        }
+      }
+
+      .head-info-right {
+        display: flex;
+        justify-content: center;
+        width: 250px;
+        align-items: center;
+        gap: 20px;
+
+        h2 {
+          font-family: "Work Sans";
+          font-size: 22px;
+          font-weight: 500;
+          line-height: 25.81px;
+          text-align: left;
+          text-underline-position: from-font;
+          text-decoration-skip-ink: none;
+          color: #213f7d;
+        }
+
+        p {
+          position: relative;
+          top: 8px;
+          font-family: "Work Sans";
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 14.08px;
+          text-align: left;
+          text-underline-position: from-font;
+          text-decoration-skip-ink: none;
+          color: #213f7d;
+        }
+      }
+    }
+    
+  }
+}

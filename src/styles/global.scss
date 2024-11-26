@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  padding: 0;
+  height: 100vh;
+}
+
+.layout {
+  max-width: 1500px;
+  margin: auto;
+}
+
+.login {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+
+  .login-left {
+    width: 50%;
+    padding: 0 50px;
+
+    .logo-image {
+      margin-top: 30px;
+      width: 173.76px;
+      position: relative;
+      top: 50px;
+      height: 36px;
+      gap: 0px;
+      opacity: 0px;
+    }
+
+    .login-image {
+      margin-top: 20px;
+      img {
+        width: 100%;
+        max-width: 600px;
+        position: relative;
+        top: 100px;
+        height: auto;
+        position: relative;
+        opacity: 1;
+      }
+    }
+  }
+
+  .login-right {
+    width: 50%;
+    height: 100vh;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+}
+
+.login-form-container {
+  position: relative;
+  padding: 20%;
+  top: 10px;
+  justify-content: center;
+
+  .login-header-text {
+    margin-bottom: 60px;
+  }
+
+  .login-title {
+    color: #213f7d;
+    font-family: "Avenir Next";
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 54.64px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    text-decoration-skip-ink: none;
+  }
+
+  .login-text {
+    font-family: "Avenir Next";
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+    top: 5px;
+    line-height: 27.32px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    color: #545f7d;
+  }
+
+  .email-container {
+    border: 1px solid #545f7d;
+    width: 447px;
+    border-radius: 5px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    height: 50px;
+    border: none;
+    width: 407px;
+    padding: 0 15px;
+    color: #545f7d;
+    background-color: transparent;
+    outline: none; 
+    font-family: "Avenir Next", sans-serif;
+    font-size: 14px;
+  }
+  
+  input:focus {
+    outline: none; 
+  }
+
+  input::placeholder {
+    font-family: "Avenir Next";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.12px;
+    text-align: left;
+    color: #545f7d;
+    text-decoration-skip-ink: none;
+  }
+
+  .password-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #545f7d;
+    width: 447px;
+    border-radius: 5px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+
+  .toggle-button {
+    border: none;
+    position: relative;
+    right: 20px;
+    background-color: transparent;
+    font-family: "Avenir Next";
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16.39px;
+    letter-spacing: 0.1em;
+    color: #39cdcc;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .login-submit {
+    font-family: "Avenir Next";
+    width: 447px;
+    margin-top: 20px;
+    height: 48px;
+    background-color: #39cdcc;
+    color: #fff;
+    border: none;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+  }
+  .forgot-password {
+    width: 147px;
+    height: 17px;
+    margin: 10px 0px;
+    gap: 0px;
+    opacity: 0px;
+
+    .link {
+      text-decoration: none;
+      font-family: "Avenir Next";
+      color: #39cdcc;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 16.39px;
+      letter-spacing: 0.1em;
+      text-align: right;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .login {
+    flex-direction: column;
+
+    .login-left,
+    .login-right {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .login-image img {
+      max-width: 100%;
+      position: relative;
+      top: 50px;
+    }
+
+    .login-form-container {
+      padding: 10%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-form-container {
+    padding: 5%;
+  }
+
+  .login-title {
+    font-size: 24px;
+  }
+
+  .login-text {
+    font-size: 14px;
+  }
+
+  .email-container,
+  .password-container,
+  .login-submit {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .forgot-password .link {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login {
+    .login-left {
+      padding: 10px;
+    }
+
+    .login-image img {
+      max-width: 90%;
+      margin: auto;
+
+    }
+
+    .login-title {
+      font-size: 20px;
+    }
+
+    .login-text {
+      font-size: 12px;
+    }
+
+    .email-container,
+    .password-container,
+    .login-submit {
+      width: 90%;
+    }
+  }
+}
+
+.app-container {
+  display: flex;
+  background-color: #fbfbfb;
+}
+
+.content-area {
+   width: 80%;
+}

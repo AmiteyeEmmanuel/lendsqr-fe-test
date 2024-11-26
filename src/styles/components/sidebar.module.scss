@@ -1,0 +1,135 @@
+/* Sidebar */
+.sidebar {
+  background-color: #ffffff;
+  position: relative;
+  width: 283px;
+  height: 1574px;
+  margin-top: 0.9px;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+
+  .user-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 12px;
+    padding: 40px 26px;
+
+    .info-name {
+      height: 19px;
+      color: #213f7d;
+      font-size: 16px;
+    }
+  }
+
+  .navigation ul {
+    list-style: none;
+    padding: 3px 0;
+  }
+
+  .nav-category {
+    position: relative;
+    top: 20px;
+    padding: 13px 0px;
+    .nav-category-title {
+      color: #213f7d;
+      padding: 0px 20px;
+      text-transform: uppercase;
+      font-family: "Work Sans";
+      font-size: 12px;
+      text-align: left;
+      font-weight: 500;
+      line-height: 14.08px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+  }
+
+  .nav-link {
+    display: flex;
+    margin-top: 11px;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    text-decoration: none;
+    column-gap: 12px;
+    letter-spacing: 0.03em;
+    transition: var(--transition-default);
+    box-sizing: border-box;
+    border-left: 3px solid transparent;
+  }
+
+  .active {
+    border-left: 3px solid #39cdcc;
+    background-color: #f3fcfc;
+  }
+
+  .nav-link-icon {
+    width: 15px;
+    height: 15px;
+  }
+
+  .nav-link-text {
+    font-family: "Work Sans";
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18.77px;
+    text-align: left;
+    color: #213f7d;
+
+    &:hover {
+      color: #213f7d;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    width: 72px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .sidebar-change {
+    margin-left: -72px;
+  }
+  .info-name {
+    display: none;
+  }
+
+  .nav-category-title {
+    display: none;
+  }
+
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .nav-link {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+
+    &:hover,
+    &.active {
+      border-radius: 8px;
+    }
+  }
+  .nav-link-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .sidebar {
+    margin-left: -72px;
+  }
+  .sidebar-change {
+    margin-left: 0px;
+  }
+}
