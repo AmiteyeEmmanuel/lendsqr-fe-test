@@ -5,6 +5,8 @@ import UserDetails from "./user_details";
 
 export default function Details() {
   const [activeSection, setActiveSection] = useState<string>("Users");
+
+  const [ activeDetailSection, setActiveDetailsSection] = useState<string>("General Details");
   return (
     <div className="app">
       <Header />
@@ -13,7 +15,10 @@ export default function Details() {
           setActiveSection={setActiveSection}
           activeSection={activeSection}
         />
-          <UserDetails />
+          <UserDetails
+             setActiveDetailsSection={setActiveDetailsSection}
+             activeDetailSection={activeDetailSection}
+          />
       </div>
     </div>
   );

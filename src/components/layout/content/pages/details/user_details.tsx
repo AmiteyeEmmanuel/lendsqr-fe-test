@@ -5,53 +5,45 @@ import axios from "axios";
 import { User } from "../../../../interface/user_interface";
 import { useEffect, useState } from "react";
 import { hostname } from "../../../../../config/config";
+import { UserDetailsData } from "../../../../../data/user_data";
+import DetailsContent from "./details_content";
 
-export default function UserDetails() {
+type DetailsProps = {
+  activeDetailSection: string;
+  setActiveDetailsSection: (section: string) => void;
+};
+
+const UserDetails: React.FC<DetailsProps> = ({
+  activeDetailSection,
+  setActiveDetailsSection,
+}) => {
   const { id } = useParams<{ id: string }>();
   const numericId = Number(id);
 
   const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   const { ArrowBack, StarOutline, StarSolid, UserAvatar } = Assets;
 
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        setLoading(true);
         const response = await axios.get(
           `${hostname}/v3/6b02d772-c8d2-4838-b19a-99bb6d98b659`
         );
         if (Array.isArray(response.data)) {
-          const foundUser = response.data.find(
-            (u: User) => u.id === numericId 
-          );
+          const foundUser = response.data.find((u: User) => u.id === numericId);
           setUser(foundUser || null);
-        } else {
-          setError("Invalid data format received from API.");
         }
       } catch (err) {
         console.error("Error fetching user data:", err);
-        setError("Failed to fetch user details.");
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchUserDetails();
-  }, [numericId]); 
-
-  if (loading) {
-    return <div>Loading user details...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  }, [numericId]);
 
   if (!user) {
-    return <div>User not found.</div>;
+    return <div>Loading user data...</div>;
   }
 
   return (
@@ -80,8 +72,8 @@ export default function UserDetails() {
             <div className={`${styles["head-info-left"]}`}>
               <img src={UserAvatar} alt="avatar" />
               <div className={`${styles["info-left"]}`}>
-                <h2>{user.username}</h2>
-                <p>{user.email}</p>
+                <h2>{user.details.personalInformation.fullName}</h2>
+                <p>LSQFf587g90</p>
               </div>
             </div>
 
@@ -104,7 +96,28 @@ export default function UserDetails() {
             </div>
           </div>
         </div>
+
+        <div className={`${styles["details-link"]}`}>
+          {UserDetailsData.map((link) => (
+            <div className="detail-header">
+              <li
+                key={link.id}
+                className={`${styles["table-header"]} ${
+                  activeDetailSection === link.title ? styles.active : ""
+                }`}
+                onClick={() => setActiveDetailsSection(link.title)}
+              >
+                {" "}
+                <span>{link.title}</span>{" "}
+              </li>
+            </div>
+          ))}
+        </div>
       </div>
+
+      <DetailsContent activeDetailSection={activeDetailSection} />
     </section>
   );
-}
+};
+
+export default UserDetails;

@@ -111,5 +111,6 @@ export const navigationLinks: GroupedNavigationLinks = {
       image: FeesAndPricingIcon,
     },
     { id: 21, title: "Audit Logs", path: "/audit-logs", image: Audit },
+    { id: 22, title: "Systems Messages", path: "/systems-messages", image: Audit },
   ],
 };

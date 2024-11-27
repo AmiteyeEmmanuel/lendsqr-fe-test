@@ -8,14 +8,21 @@ type SidebarProps = {
   setActiveSection: (section: string) => void;
 };
 
-const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) => {
-  const { Organization, arrowDown } = DashboardAssets;
+const Sidebar: React.FC<SidebarProps> = ({
+  activeSection,
+  setActiveSection,
+}) => {
+  const { Organization, arrowDown, SignOutIcon } = DashboardAssets;
 
   return (
     <div className={styles.sidebar}>
       {/* User Info Section */}
       <div className={styles["user-info"]}>
-        <img src={Organization} alt="Organization Logo" className={styles["organization-logo"]} />
+        <img
+          src={Organization}
+          alt="Organization Logo"
+          className={styles["organization-logo"]}
+        />
         <span className={styles["info-name"]}>Switch Organization</span>
         <img src={arrowDown} alt="Toggle" className={styles["arrow-down"]} />
       </div>
@@ -36,7 +43,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
                 alt={dashboardLink.title}
                 className={styles["nav-link-icon"]}
               />
-              <span className={styles["nav-link-text"]}>{dashboardLink.title}</span>
+              <span className={styles["nav-link-text"]}>
+                {dashboardLink.title}
+              </span>
             </div>
           </li>
 
@@ -59,7 +68,9 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
                         alt={link.title}
                         className={styles["nav-link-icon"]}
                       />
-                      <span className={styles["nav-link-text"]}>{link.title}</span>
+                      <span className={styles["nav-link-text"]}>
+                        {link.title}
+                      </span>
                     </div>
                   </li>
                 ))}
@@ -68,6 +79,14 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
           ))}
         </ul>
       </nav>
+
+      <div className={styles.logoutContaniner}>
+        <div className={styles.logout}>
+          <img src={SignOutIcon} alt="logout" />
+          <p> Logout</p>
+        </div>
+         <p className={styles.version}> v1.2.0 </p>
+      </div>
     </div>
   );
 };

@@ -45,6 +45,7 @@ import Reports from '../assets/svg/Report.svg';
 import Preferences from '../assets/svg/Preference.svg';
 import FeesAndPricingIcon from '../assets/svg/FnP.svg';
 import Audit from '../assets/svg/Audit.svg';
+import SignOutIcon from '../assets/svg/sign-out.svg'
 
 // Consolidated Export
 export const Assets = {
@@ -91,6 +92,7 @@ export const DashboardAssets = {
   FeesAndPricingIcon,
   arrowDown,
   Audit,
+  SignOutIcon
 };
 
 
