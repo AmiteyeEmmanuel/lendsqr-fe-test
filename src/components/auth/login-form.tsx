@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { hideLoading, showLoading } from "../../redux/loading/loadingslice";
-import { hostname } from "../../config/config";
 
 const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -20,7 +19,7 @@ const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
         dispatch(showLoading())
-        const response = await axios.post(`${hostname}/v3/216369d2-ac10-429b-bca6-ac60fca6c564`, {email, password})
+        const response = await axios.post(`https://run.mocky.io/v3/216369d2-ac10-429b-bca6-ac60fca6c564`, {email, password})
         if (response.data) {
             toast.success("Successfully Login")
             setTimeout(() => {
