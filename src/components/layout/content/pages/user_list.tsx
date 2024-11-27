@@ -7,7 +7,7 @@ import axios from "axios";
 import ReactPaginate from "react-paginate";
 import FilterModal from "../../../../utils/filter.utils";
 import MoreModal from "../../../../utils/more.utils";
-import { hostname } from "../../../../config/config";
+
 
 const UserList = () => {
   const { FilterButton, MoreIcon } = Assets;
@@ -31,7 +31,7 @@ const UserList = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `${hostname}/v3/6b02d772-c8d2-4838-b19a-99bb6d98b659`
+          `https://run.mocky.io/v3/6b02d772-c8d2-4838-b19a-99bb6d98b659`
         );
         if (Array.isArray(response.data)) {
           setUsers(response.data);

@@ -4,7 +4,6 @@ import styles from "../../../../../styles/components/content/userDetail.module.s
 import axios from "axios";
 import { User } from "../../../../interface/user_interface";
 import { useEffect, useState } from "react";
-import { hostname } from "../../../../../config/config";
 import { UserDetailsData } from "../../../../../data/user_data";
 import DetailsContent from "./details_content";
 
@@ -28,7 +27,7 @@ const UserDetails: React.FC<DetailsProps> = ({
     const fetchUserDetails = async () => {
       try {
         const response = await axios.get(
-          `${hostname}/v3/6b02d772-c8d2-4838-b19a-99bb6d98b659`
+          `https://run.mocky.io/v3/6b02d772-c8d2-4838-b19a-99bb6d98b659`
         );
         if (Array.isArray(response.data)) {
           const foundUser = response.data.find((u: User) => u.id === numericId);
