@@ -1,5 +1,5 @@
 import { cardData } from "../../../../data/card_data";
-import  styles from "../../../../styles/components/content/UserList.module.scss";
+import  styles from "../../../../styles/components/content/userList.module.scss";
 import UserList from "./user_list";
 
 
